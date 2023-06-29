@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>KT4</title>
+    <script>
+        let books = ['Лермонтов', 'Достоевский'];
+        books.shift();
+        books.unshift('Тютчев', 'Пушкин');
+        books.push('Толстой');
+        console.log("Часть 3, задание 1: " + books);
+
+        let arr = [];
+        for (let i = 0; i < 7; i++) {
+            arr.push(Math.floor(Math.random() * 10) + 1);
+        }
+        console.log("Часть 3, задание 2: " + arr);
+        multiplication = 1
+        for (i = 0; i < arr.length; i++) {
+            multiplication *= arr[i];
+        }
+
+        console.log("Произведение элементов "+multiplication)
+
+        function day(day_number) {
+            if (day_number == 1) {
+                alert("Понедельник");
+            }
+            else if (day_number == 2) {
+                alert("Вторник");
+            }
+            else if (day_number == 3) {
+                alert("Среда");
+            }
+            else if (day_number == 4) {
+                alert("Четверг");
+            }
+            else if (day_number == 5) {
+                alert("Пятница");
+            }
+            else if (day_number == 6) {
+                alert("Суббота");
+            }
+            else if (day_number == 7) {
+                alert("Воскресенье");
+            }
+ 
+        }
+        function sum(n, b) {
+            let sum1 = 0;
+            for (let i = 1; i <= n; i++) {
+                sum1 += 2 * i + Math.sqrt(3 * i + b ** 2);
+            }
+            alert(sum1);
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <h1>Часть 1</h1>
+        <label>Введите день недели<input type="number" min="1" max="7" name="day_input" /></label>
+        <input type="submit" onclick="day(document.form1.day_input.value)" />
+    </form>
+    <form name="form2">
+        <h1>Часть 2</h1>
+        <label>Введите n<input type="number" name="n" /></label>
+        <label>Введите b<input type="number" name="b" /></label>
+        <input type="submit" onclick="sum(document.form2.n.value, document.form2.b.value)" />
+    </form>
+
+</body>
+</html>
